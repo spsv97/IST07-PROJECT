@@ -1,10 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="John Doe">
-    <title>Document</title>
-  </head>
-  <body></body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrix of Destiny</title>
+  <link rel="stylesheet" href="#">
+</head>
+
+<body>
+  <header>
+    <h1>Matrix of Destiny</h1>
+    <nav>
+      <button id="btnPersonal">Personal Reading</button>
+      <button id="btnCompatibility">Compatibility</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="personalSection">
+      <div class="#">
+        <form id="personal-form">
+          <div class="#">
+            <label for="date">Birth Date:</label>
+            <input type="date" id="date" required>
+          </div>
+
+          <button type="submit">Calculate Matrix</button>
+        </form>
+      </div>
+
+      <div class="output-personal-date"></div>
+      <div class="matrix-container display-none">
+        <div class="matrix-diagram"></div>
+      </div>
+      <div id="explanations"></div>
+    </section>
+
+    <section id="compatibilitySection" class="display-none">
+      <div class="container">
+        <form id="compatibility-form">
+          <h2>Person 1</h2>
+          <div class="#">
+            <label for="date_person1">Birth Date:</label>
+            <input type="date" id="date_person1" required>
+          </div>
+
+          <h2>Person 2</h2>
+          <div class="#">
+            <label for="date_person2">Birth Date:</label>
+            <input type="date" id="date_person2" required>
+          </div>
+          <button type="submit">Calculate Compatibility</button>
+        </form>
+      </div>
+
+      <div class="compatibility-container display-none">
+        <div id="compatibilityMatrixOutput"></div>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="print-results">Print Results</button>
+      <button id="clear-data">Clear</button>
+    </div>
+  </main>
+
+  <script src="/script/script.js"></script>
+</body>
+
 </html>
