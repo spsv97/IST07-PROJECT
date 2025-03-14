@@ -1,3 +1,4 @@
+<!-- Main HTML file for the Matrix of Destiny app -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,10 +6,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matrix of Destiny</title>
-  <link rel="stylesheet" href="#">
+  <link rel="stylesheet" href="/style/style.css">
 </head>
 
 <body>
+  <!-- Top section with title and navigation buttons -->
   <header>
     <h1>Matrix of Destiny</h1>
     <nav>
@@ -18,6 +20,7 @@
   </header>
 
   <main>
+    <!-- Section for personal matrix calculation -->
     <section id="personalSection">
       <div class="#">
         <form id="personal-form">
@@ -30,6 +33,7 @@
         </form>
       </div>
 
+      <!-- Areas to show personal reading results -->
       <div class="output-personal-date"></div>
       <div class="matrix-container display-none">
         <div class="matrix-diagram"></div>
@@ -37,15 +41,18 @@
       <div id="explanations"></div>
     </section>
 
+    <!-- Section for compatibility calculation between two people -->
     <section id="compatibilitySection" class="display-none">
       <div class="container">
         <form id="compatibility-form">
+          <!-- First person's birth date input -->
           <h2>Person 1</h2>
           <div class="#">
             <label for="date_person1">Birth Date:</label>
             <input type="date" id="date_person1" required>
           </div>
 
+          <!-- Second person's birth date input -->
           <h2>Person 2</h2>
           <div class="#">
             <label for="date_person2">Birth Date:</label>
@@ -55,17 +62,20 @@
         </form>
       </div>
 
+      <!-- Area to show compatibility results -->
       <div class="compatibility-container display-none">
         <div id="compatibilityMatrixOutput"></div>
       </div>
     </section>
 
+    <!-- Buttons for printing and clearing results -->
     <div class="actions">
       <button id="print-results">Print Results</button>
       <button id="clear-data">Clear</button>
     </div>
   </main>
 
+  <!-- Link to JavaScript file -->
   <script src="/script/script.js"></script>
 </body>
 
