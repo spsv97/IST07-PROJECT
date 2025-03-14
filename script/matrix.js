@@ -64,7 +64,7 @@ console.log(BL1);
 const C = reduce_number(L1 + T1 + R1 + B1);
 console.log(C);
 
-/*STEP 4 - NUMBERS BETEWEEN THE CORNERS AND THE CENTER NUMBER*/
+/*STEP 4 - THIRD LAYER - NUMBERS BETEWEEN THE CORNERS AND THE CENTER NUMBER*/
 /*The next step is calculate the numbers between the corners and the center. Each corner corner is added to center, 
 resulting in LT3, T3, TR3, R3, RB3, B3, BL3 and L3*/
 
@@ -76,3 +76,27 @@ const RB3 = reduce_number(RB1 + C);
 const B3 = reduce_number(B1 + C);
 const BL3 = reduce_number(BL1 + C);
 const L3 = reduce_number(L1 + C);
+
+
+/*STEP 5 - SECOND LAYER - NUMBERS BETEWEEN THE CORNERS AND THIRD LAYER*/
+/*The next step is calculate the numbers between the corners and the third layer (LT3, T3, TR3, R3, RB3, B3, BL3 and L3). 
+Each corner corner is added to each third layer, resulting in LT2, T2, TR2, R2, RB2, B2, BL2 and L2*/
+
+const LT2 = reduce_number(LT1 + LT3);
+const T2 = reduce_number(T1 + T3);
+const TR2 = reduce_number(TR1 + TR3);
+const R2 = reduce_number(R1 + R3);
+const RB2 = reduce_number(RB1 + RB3);
+const B2 = reduce_number(B1 + B3);
+const BL2 = reduce_number(BL1 + BL3);
+const L2 = reduce_number(L1 + L3);
+
+
+/*STEP 6 - FOURTH LAYER - L4, T4, RB4, BRB and RRB*/
+/*Step 6 does the sum of the last four position. The sum is made by the opposite nearest numbers in the same line.*/
+
+const L4 = reduce_number(L3 + C);
+const T4 = reduce_number(T3 + C);
+const RB4 = reduce_number(R3 + B3);
+const BRB = reduce_number(B3 + RB4);
+const RRB = reduce_number(R3 + RB4);
