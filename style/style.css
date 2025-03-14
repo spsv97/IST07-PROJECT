@@ -1,1 +1,92 @@
-/* Hello world guys */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #8e44ad;
+    --bg-color: #f5f6fa;
+    --text-color: #2c3e50;
+    --mystical-gradient: linear-gradient(135deg, #5e70c3 0%, #8a50c4 100%);
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; 
+    background: #f5f7fa; 
+    color: #333; 
+    line-height: 1.5; 
+}
+
+header { 
+    background: var(--mystical-gradient); 
+    color: #fff; 
+    text-align: center; 
+    padding: 30px 20px; 
+}
+
+header h1 { 
+    font-size: 4rem; 
+    margin-bottom: 10px; 
+    font-weight: 700; 
+}
+
+nav { 
+    margin-top: 20px; 
+}
+
+nav button { 
+    background: #fff; 
+    border: none; 
+    color: #667eea; 
+    padding: clamp(8px, 1vw, 16px) clamp(12px, 2vw, 24px); 
+    margin: 0 0.5vw; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: clamp(1rem, 1vw, 1.5rem);
+    transition: color 0.3s;
+}
+
+nav button.active { 
+    background: #667eea; 
+    color: #fff; 
+    transition: color 0.3s;
+    font-size: clamp(1rem, 1vw, 1.5rem);    
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px auto;
+    max-width: 1200px;
+}
+
+.content div {
+    width: 45%;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.content img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    margin: 10px 0;
+    align-items: center;
+}
+
+.content p {
+    font-size: 1.2rem;
+}
+
