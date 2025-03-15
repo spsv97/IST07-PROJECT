@@ -1,5 +1,5 @@
 /*The birthdate will be passed from the form.*/
-const birthdate = new Date(1987,03,15)
+const birthdate = new Date(1987,3,15)
 console.log(birthdate)
 
 /*We got the instructions to calculate the destiny matrix from https://www.youtube.com/watch?v=ZpHDV2_7tCs*/
@@ -100,3 +100,34 @@ const T4 = reduce_number(T3 + C);
 const RB4 = reduce_number(R3 + B3);
 const BRB = reduce_number(B3 + RB4);
 const RRB = reduce_number(R3 + RB4);
+
+
+/*ADDING VALUES TO THE MATRIX*/
+const image = document.getElementById('image');
+
+//Finding the coordinates to the circles
+image.addEventListener('click', (event) => {
+    const rect = image.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    console.log(`X: ${x}, Y: ${y}`);
+    alert(`Circle Center: X: ${Math.round(x)}, Y: ${Math.round(y)}`);
+});
+
+// Define coordinates of the circles
+const circles = {
+    L1_coord : { x: 41, y: 325 },
+    T1_coord : { x: 300, y: 33 },
+    R1_coord : { x: 572, y: 300 }
+    // Add more coordinates as needed
+};
+
+const valueDiv = document.createElement('div');
+valueDiv.className = 'value';
+valueDiv.textContent = L1;
+// Position the value above the circle
+valueDiv.style.left = `${circles.L1_coord.x}px`;
+valueDiv.style.top = `${circles.L1_coord.y}px`;
+
+const container = image.parentElement;
+container.appendChild(valueDiv);
