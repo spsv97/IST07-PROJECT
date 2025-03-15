@@ -25,7 +25,7 @@ function reduce_year(year) {
     return y;
 };
 
-/*STEP 1 - FIRST LEVEL OF DIAGONAL SQUARE
+/*STEP 1 - FIRST LEVEL OF DIAGONAL SQUARE*/
 /*The top corner, write the birth number, which in this case is 5. The Arcana 5 represents personal qualities at birth*/
 const L1 = reduce_number(birthdate.getDate());
 console.log(L1);
@@ -65,7 +65,7 @@ const C = reduce_number(L1 + T1 + R1 + B1);
 console.log(C);
 
 /*STEP 4 - THIRD LAYER - NUMBERS BETEWEEN THE CORNERS AND THE CENTER NUMBER*/
-/*The next step is calculate the numbers between the corners and the center. Each corner corner is added to center, 
+/*The next step is calculate the numbers between the corners and the center. Each corner is added to center, 
 resulting in LT3, T3, TR3, R3, RB3, B3, BL3 and L3*/
 
 const LT3 = reduce_number(LT1 + C);
