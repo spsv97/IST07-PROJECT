@@ -103,6 +103,195 @@ nav button.active {
     font-size: 1.02rem;
 }
 
+/* Form styles */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid #dde1e7;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #7f00ff, #e100ff);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(127, 0, 255, 0.4);
+}
+
+/* Results container */
+.results-container {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+
+.display-none {
+    display: none;
+}
+
+/*Results Container Styling */
+.results-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Zodiac Info Section */
+.zodiac-info {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.zodiac-info h2 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.zodiac-symbol {
+    background: var(--mystical-gradient);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.zodiac-symbol h3 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.zodiac-symbol p {
+    font-size: 1.1em;
+    margin: 8px 0;
+}
+
+.zodiac-traits {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.zodiac-traits p {
+    margin: 12px 0;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.zodiac-traits strong {
+    color: var(--accent-color);
+}
+
+/* Predictions Section */
+.predictions {
+    text-align: center;
+    padding: 20px;
+}
+
+.predictions h2 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.prediction-categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.category {
+    padding: 12px 25px;
+    background: #f0f0f0;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.category:hover {
+    background: var(--mystical-gradient);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.category.active {
+    background: var(--mystical-gradient);
+    color: white;
+    box-shadow: 0 4px 15px rgba(142, 68, 173, 0.3);
+}
+
+.prediction-content {
+    font-size: 1.2em;
+    line-height: 1.6;
+    padding: 30px;
+    margin-top: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .results-container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .zodiac-symbol h3 {
+        font-size: 2em;
+    }
+
+    .prediction-categories {
+        gap: 10px;
+    }
+
+    .category {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
 footer{
     background: var(--mystical-gradient); 
     color: #fff; 
