@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Group 3" />
+    <title>Stelar Path</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpeg" />
+</head>
+
+<body>
+    <header>
+        <h1 onclick="location.href='index.html'">Stellar Path</h1>
+
+        <nav>
+            <button id="btnAstrology" class="active">Astrology game</button>
+            <button id="btnNumerology">Numerology game</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Astrology Game Section -->
+        <section id="astrologySection">
+            <div class="content">
+                <p>Discover your Zodiac sign, personality, and fate! Enter your birthdate below to reveal your cosmic
+                    destiny.</p>
+            </div>
+
+            <div class="game-container">
+                <form id="astrology-form">
+                    <div class="form-group">
+                        <label for="astro-date">Enter your birthdate:</label>
+                        <input type="date" id="astro-date" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Reveal Your Destiny</button>
+                </form>
+
+                <div class="results-container display-none">
+                    <div class="zodiac-info">
+                        <h2>Your Zodiac Sign</h2>
+                        <div class="zodiac-symbol"></div>
+                        <div class="zodiac-traits"></div>
+                    </div>
+
+                    <div class="predictions">
+                        <h2>Your Predictions</h2>
+                        <div class="prediction-categories">
+                            <div class="category" data-category="love">Love</div>
+                            <div class="category" data-category="money">Money</div>
+                            <div class="category" data-category="career">Career</div>
+                            <div class="category" data-category="life">Life</div>
+                            <div class="category" data-category="health">Health</div>
+                        </div>
+                        <div class="prediction-content"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Your footer content if any -->
+    </footer>
+
+    <!-- Add these script tags before the closing body tag -->
+    <script type="module" src="script/astro_explaination.js"></script>
+    <script type="module" src="script/astrology.js"></script>
+</body>
+</html>
