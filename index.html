@@ -1,82 +1,62 @@
-<!-- Main HTML file for the Matrix of Destiny app -->
 <!DOCTYPE html>
+
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Group 3" />
+    <title>Stelar Path</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpeg" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matrix of Destiny</title>
-  <link rel="stylesheet" href="/style/style.css">
-</head>
+  <body>
+    <header>
+      <h1 id="homePage">Stellar Path</h1>
 
-<body>
-  <!-- Top section with title and navigation buttons -->
-  <header>
-    <h1>Matrix of Destiny</h1>
-    <nav>
-      <button id="btnPersonal">Personal Reading</button>
-      <button id="btnCompatibility">Compatibility</button>
-    </nav>
-  </header>
+      <nav>
+        <button onclick= "location.href='astrology_form.html'" id="btnAstrology" class="active">Astrology game</button>
+        <button id="btnNumerology">Numerology game</button>
+      </nav>
+    </header>
 
-  <main>
-    <!-- Section for personal matrix calculation -->
-    <section id="personalSection">
-      <div class="#">
-        <form id="personal-form">
-          <div class="#">
-            <label for="date">Birth Date:</label>
-            <input type="date" id="date" required>
-          </div>
-
-          <button type="submit">Calculate Matrix</button>
-        </form>
+    <section class="content">
+      <div class="card">
+        <h2>Astrology</h2>
+        <img src="assets/Astrology.jpeg" alt="Astrology Image" />
+        <p>
+          Astrology is an ancient practice that studies the influence of
+          celestial bodies on human life. Since ancient times, civilizations
+          have observed the movement of the stars to understand earthly events
+          and individual destinies. Each zodiac sign has unique characteristics,
+          and the planets play a key role in shaping personality and fate. How
+          do the stars affect your life? Uncover the universe’s secrets and
+          explore the power of astrology.
+        </p>
       </div>
 
-      <!-- Areas to show personal reading results -->
-      <div class="output-personal-date"></div>
-      <div class="matrix-container display-none">
-        <div class="matrix-diagram"></div>
-      </div>
-      <div id="explanations"></div>
-    </section>
-
-    <!-- Section for compatibility calculation between two people -->
-    <section id="compatibilitySection" class="display-none">
-      <div class="container">
-        <form id="compatibility-form">
-          <!-- First person's birth date input -->
-          <h2>Person 1</h2>
-          <div class="#">
-            <label for="date_person1">Birth Date:</label>
-            <input type="date" id="date_person1" required>
-          </div>
-
-          <!-- Second person's birth date input -->
-          <h2>Person 2</h2>
-          <div class="#">
-            <label for="date_person2">Birth Date:</label>
-            <input type="date" id="date_person2" required>
-          </div>
-          <button type="submit">Calculate Compatibility</button>
-        </form>
-      </div>
-
-      <!-- Area to show compatibility results -->
-      <div class="compatibility-container display-none">
-        <div id="compatibilityMatrixOutput"></div>
+      <div class="card">
+        <h2>Numerology</h2>
+        <img src="assets/Numerology.jpeg" alt="Numerology Image" />
+        <p>
+          Numerology is the art of interpreting numbers and their relationship
+          with everyday life. Each number is believed to carry a unique
+          vibration that influences our personality, destiny, and the
+          opportunities we encounter. Since ancient times, scholars have used
+          numerology to reveal hidden patterns and gain a deeper understanding
+          of life’s purpose.Dive into the fascinating world of numerology and
+          discover the meaning behind each figure.
+        </p>
       </div>
     </section>
-
-    <!-- Buttons for printing and clearing results -->
-    <div class="actions">
-      <button id="print-results">Print Results</button>
-      <button id="clear-data">Clear</button>
-    </div>
-  </main>
-
-  <!-- Link to JavaScript file -->
-  <script src="/script/script.js"></script>
-</body>
-
+    <footer>
+      <div class="footer-section">Natalia</div>
+      <div class="footer-section">Rachata</div>
+      <div class="footer-section">Thiago</div>
+      <div class="footer-section">Steven</div>
+      <div class="footer-section">
+        <img src="assets/cctb.png" alt="CCTB" id="cctbLogo" />
+      </div>
+    </footer>
+  </body>
 </html>
