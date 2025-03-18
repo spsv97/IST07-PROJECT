@@ -1,0 +1,286 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #8e44ad;
+    --bg-color: #f5f6fa;
+    --text-color: #2c3e50;
+    --mystical-gradient: linear-gradient(135deg, #5e70c3 0%, #8a50c4 100%);
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; 
+    background: #f5f7fa; 
+    color: #333; 
+    line-height: 1.5; 
+}
+
+header { 
+    background: var(--mystical-gradient); 
+    color: #fff; 
+    text-align: center; 
+    padding: 30px 20px; 
+}
+
+header h1 { 
+    font-size: 2.5rem; 
+    margin-bottom: 5px; 
+    font-weight: 800; 
+}
+
+nav { 
+    margin-top: 1.5vh; 
+}
+
+nav button { 
+    background:var(--bg-color); 
+    border: none; 
+    color: #667eea; 
+    padding: clamp(6px, 0.8vw, 16px) clamp(12px, 1vw, 24px); 
+    margin: 0 1vw; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: clamp(1rem, 1vw, 1.5rem);
+    transition: color 0.3s;
+}
+
+#btnHome:hover{
+    transform: scale(1.2);
+}
+
+nav button.active { 
+    background: #667eea; 
+    color: #fff; 
+    transition: color 0.3s;
+    font-size: clamp(1rem, 1vw, 1.5rem);    
+}
+
+#btnNumerology:hover{
+    transform: scale(1.2);
+}
+
+.content {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 4vh auto;
+    max-width: 90%;
+}
+
+.content p {
+    text-align: justify;
+    font-size: 1.02rem;
+}
+
+/* Form styles */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color:var(--text-color);
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid #dde1e7;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #7f00ff, #e100ff);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(127, 0, 255, 0.4);
+}
+
+/* Results container */
+.results-container {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+
+.display-none {
+    display: none;
+}
+
+/*Results Container Styling */
+.results-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Zodiac Info Section */
+.zodiac-info {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.zodiac-info h2 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.zodiac-symbol {
+    background: var(--mystical-gradient);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.zodiac-symbol h3 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.zodiac-symbol p {
+    font-size: 1.1em;
+    margin: 8px 0;
+}
+
+.zodiac-traits {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.zodiac-traits p {
+    margin: 12px 0;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.zodiac-traits strong {
+    color: var(--accent-color);
+}
+
+/* Predictions Section */
+.predictions {
+    text-align: center;
+    padding: 20px;
+}
+
+.predictions h2 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.prediction-categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.category {
+    padding: 12px 25px;
+    background: #f0f0f0;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.category:hover {
+    background: var(--mystical-gradient);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.category.active {
+    background: var(--mystical-gradient);
+    color: white;
+    box-shadow: 0 4px 15px rgba(142, 68, 173, 0.3);
+}
+
+.prediction-content {
+    font-size: 1.2em;
+    line-height: 1.6;
+    padding: 30px;
+    margin-top: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .results-container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .zodiac-symbol h3 {
+        font-size: 2em;
+    }
+
+    .prediction-categories {
+        gap: 10px;
+    }
+
+    .category {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+footer{
+    background: var(--mystical-gradient); 
+    color: #fff; 
+    text-align: center; 
+    padding: 30px 20px; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+#cctbLogo{
+    width:40%;
+    height:30%;
+
+}
