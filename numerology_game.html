@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,7 +8,6 @@
     <link rel="stylesheet" href="style/style.css" />
     <link rel="icon" type="image/jpeg" href="assets/favicon.jpeg" />
   </head>
-
   <body>
     <header>
       <h1>Stellar Path</h1>
@@ -33,33 +31,20 @@
 
     <section class="content">
       <div class="card">
-        <h2>Astrology</h2>
-        <img src="assets/Astrology.jpeg" alt="Astrology Image" />
-        <p>
-          Astrology is an ancient practice that studies the influence of
-          celestial bodies on human life. Since ancient times, civilizations
-          have observed the movement of the stars to understand earthly events
-          and individual destinies. Each zodiac sign has unique characteristics,
-          and the planets play a key role in shaping personality and fate. How
-          do the stars affect your life? Uncover the universe’s secrets and
-          explore the power of astrology.
-        </p>
-      </div>
-
-      <div class="card">
         <h2>Numerology</h2>
-        <img src="assets/Numerology.jpeg" alt="Numerology Image" />
         <p>
-          Numerology is the art of interpreting numbers and their relationship
-          with everyday life. Each number is believed to carry a unique
-          vibration that influences our personality, destiny, and the
-          opportunities we encounter. Since ancient times, scholars have used
-          numerology to reveal hidden patterns and gain a deeper understanding
-          of life’s purpose.Dive into the fascinating world of numerology and
-          discover the meaning behind each figure.
+          Enter your birth date and a random number to generate your numerology
+          star.
         </p>
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" id="birthdate" />
+        <label for="randomNum">Random Number:</label>
+        <input type="number" id="randomNum" min="1" max="9" />
+        <button onclick="generateStar()">Generate Numerology Star</button>
+        <div id="starOutput"></div>
       </div>
     </section>
+
     <footer>
       <div class="footer-section">Natalia</div>
       <div class="footer-section">Rachata</div>
@@ -69,5 +54,7 @@
         <img src="assets/cctb.png" alt="CCTB" id="cctbLogo" />
       </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
