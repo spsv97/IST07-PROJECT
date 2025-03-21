@@ -1,3 +1,4 @@
+/* Root variables for theme colors */
 :root {
     --primary-color: #2c3e50;
     --accent-color: #8e44ad;
@@ -6,116 +7,167 @@
     --mystical-gradient: linear-gradient(135deg, #5e70c3 0%, #8a50c4 100%);
 }
 
+/* Reset default margin, padding, and box-sizing */
 * { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
 }
 
-body { 
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; 
-    background: #f5f7fa; 
-    color: #333; 
-    line-height: 1.5; 
+/* General body styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5e3f7;
+    color: #4a154b;
+    margin: 0;
+    padding: 0;
 }
 
-header { 
-    background: var(--mystical-gradient); 
-    color: #fff; 
-    text-align: center; 
-    padding: 30px 20px; 
-}
-
-header h1 { 
-    font-size: 2.5rem; 
-    margin-bottom: 5px; 
-    font-weight: 800; 
-}
-
-nav { 
-    margin-top: 1.5vh; 
-}
-
-nav button { 
-    background:var(--bg-color); 
-    border: none; 
-    color: #667eea; 
-    padding: clamp(6px, 0.8vw, 16px) clamp(12px, 1vw, 24px); 
-    margin: 0 1vw; 
-    border-radius: 4px; 
-    cursor: pointer; 
-    font-weight: bold; 
-    font-size: clamp(1rem, 1vw, 1.5rem);
-    transition: color 0.3s;
-}
-
-#btnAstrology:hover{
-    transform: scale(1.2);
-}
-
-nav button.active { 
-    background: #667eea; 
-    color: #fff; 
-    transition: color 0.3s;
-    font-size: clamp(1rem, 1vw, 1.5rem);    
-}
-
-#btnNumerology:hover{
-    transform: scale(1.2);
-}
-
-.content {
+/* Header styling */
+header {
     text-align: center;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 4vh auto;
-    max-width: 90%;
+    padding: 3vh;
+    background-color: #e8b8f1;
 }
 
-.content div {
-    width: 45%;
-    background: #ffffff;
-    padding: 20px;
+/* Main heading styling */
+h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 3rem;
+    color: #502d6e;
+}
+
+/* Navigation styling */
+nav {
+    margin-top: 0.5vh;
+}
+
+nav button {
+    background-color: #7a3f91;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+/* Navigation button hover and active states */
+nav button:hover,.active:hover{
+    background-color: #9d60b5;
+    scale: 1.05;
+    box-shadow: 0 5px 10px #7a3f91;
+}
+
+
+/* Main content layout */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2vh;
+   
+}
+
+/* Card component styling */
+.card {
+    background-color: #fff;
+    padding: 2vh;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 40%;
+    min-width: 400px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    margin: 2vh;
 }
 
-.content h2 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.content img {
+/* Card image styling */
+.card img {
     width: 80%;
-    max-width: 300px;
-    border-radius: 8px;
-    margin: 10px 0;
+    border-radius: 10px;
+    margin: 2vh;
 }
 
-.content div:hover{
-    transform: scale(1.05);
+/* Hover effect for cards */
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 10px #7a3f91;
 }
 
-.content p {
+.card p{
     text-align: justify;
-    font-size: 1.02rem;
 }
 
-footer{
-    background: var(--mystical-gradient); 
-    color: #fff; 
-    text-align: center; 
-    padding: 30px 20px; 
+.star-map {
+    width: 100%;
+    max-width: 82%;
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.star-map img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Icon section styling */
+.icons-section h2{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+.icons-section {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px;
+    background-color: #f0d0f5;
 }
 
-#cctbLogo{
-    width:40%;
-    height:30%;
+.icons-section div {
+    width: 200px;
+    text-align: center;
+}
 
+i {
+    font-size: 50px;
+    color: purple; /* Cambia el color */
+    margin-right: 1vh;
+    margin-bottom: 2vh;
+}
+
+/* Contact section styling */
+.contact-section {
+    text-align: center;
+    padding: 3vh;
+    background-color: #e8b8f1;
+    color: white;
+}
+
+.contact-section a img {
+    width: 40px;
+    margin: 10px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #502d6e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-section img {
+    width: 120px;
+    margin-top: 15px;
 }
