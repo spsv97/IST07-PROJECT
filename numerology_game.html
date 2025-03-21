@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Group 3" />
+    <title>Stellar Path</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpeg" />
+  </head>
+  <body>
+    <header>
+      <h1>Stellar Path</h1>
+      <nav>
+        <button
+          onclick="location.href='astrology_form.html'"
+          id="btnAstrology"
+          class="active"
+        >
+          Astrology game
+        </button>
+        <button
+          onclick="location.href='index.html'"
+          id="btnAstrology"
+          class="active"
+        >
+          Home page
+        </button>
+      </nav>
+    </header>
+
+    <section class="content">
+      <div class="card">
+        <h2>Numerology</h2>
+        <p>
+          Enter your birth date and a random number to generate your numerology
+          star.
+        </p>
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" id="birthdate" />
+        <label for="randomNum">Random Number:</label>
+        <input type="number" id="randomNum" min="1" max="9" />
+        <button onclick="generateStar()">Generate Numerology Star</button>
+        <div id="starOutput"></div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-section">Natalia</div>
+      <div class="footer-section">Rachata</div>
+      <div class="footer-section">Thiago</div>
+      <div class="footer-section">Steven</div>
+      <div class="footer-section">
+        <img src="assets/cctb.png" alt="CCTB" id="cctbLogo" />
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
