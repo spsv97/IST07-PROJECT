@@ -36,12 +36,11 @@
           Enter your birth date and a random number to generate your numerology
           star.
         </p>
-        <label for="birthdate">Birthdate:</label>
-        <input type="date" id="birthdate" />
-        <label for="randomNum">Random Number:</label>
-        <input type="number" id="randomNum" min="1" max="9" />
-        <button onclick="generateStar()">Generate Numerology Star</button>
-        <div id="starOutput"></div>
+        <form id="starForm">
+          <label for="birthdate">Birthdate:</label>
+          <input type="date" id="birthdate" />
+          <button id="starButton">Generate Numerology Star</button>
+        </form>
       </div>
     </section>
 
@@ -55,6 +54,16 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+      document.getElementById("starForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevents form refresh
+        let birthdate = document.getElementById("birthdate").value;
+        let url = "matrix.html?birthdate=" + birthdate;
+
+        if (birthdate) {
+          window.open(url, '_blank').focus();
+        }
+      });
+    </script>
   </body>
 </html>

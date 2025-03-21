@@ -1,102 +1,180 @@
-/*The birthdate will be passed from the form.*/
-const birthdate = new Date(1987,03,15)
-console.log(birthdate)
+/*document.getElementById("starForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevents form refresh
+    let birthdate = document.getElementById("birthdate").value;
 
-/*We got the instructions to calculate the destiny matrix from https://www.youtube.com/watch?v=ZpHDV2_7tCs*/
-
-function reduce_number(number) {
-    /*Every number must be checked. If it is greater the 22, the digits must be added together*/
-    let num = number;
-  if (number > 22) {
-    /*The Math.floor() method rounds a number DOWN to the nearest integer*/
-    num = (number % 10) + Math.floor(number / 10);
-  }
-  return num;
-};
-
-function reduce_year(year) {
-    /*Method to reduce year to a number under 22*/
-    let y = 0;
-    while (year > 0) {
-        y += year % 10;
-        year = Math.floor(year / 10);
+    if (birthdate) {
+        calculateMatrix(birthdate);
     }
-    y = reduce_number(y);
-    return y;
+});*/
+
+let params = new URLSearchParams(location.search);
+const birthdate = params.get('birthdate');
+console.log(birthdate);
+
+calculateMatrix(birthdate);
+
+function calculateMatrix(date) {
+    /*The birthdate will be passed from the form.*/
+    const birthdate = new Date(date)
+    console.log(birthdate)
+
+    /*We got the instructions to calculate the destiny matrix from https://www.youtube.com/watch?v=ZpHDV2_7tCs*/
+
+    function reduce_number(number) {
+        /*Every number must be checked. If it is greater the 22, the digits must be added together*/
+        let num = number;
+    if (number > 22) {
+        /*The Math.floor() method rounds a number DOWN to the nearest integer*/
+        num = (number % 10) + Math.floor(number / 10);
+    }
+    return num;
+    };
+
+    function reduce_year(year) {
+        /*Method to reduce year to a number under 22*/
+        let y = 0;
+        while (year > 0) {
+            y += year % 10;
+            year = Math.floor(year / 10);
+        }
+        y = reduce_number(y);
+        return y;
+    };
+
+    /*STEP 1 - FIRST LEVEL OF DIAGONAL SQUARE*/
+    /*The top corner, write the birth number, which in this case is 5. The Arcana 5 represents personal qualities at birth*/
+    const L1 = reduce_number(birthdate.getDate()) + 1;
+    //console.log(L1);
+
+    /*The upper corner, write the month of birth, which is 10. This represents creativity.*/
+    const T1 = reduce_number(birthdate.getMonth()) + 1;
+    //console.log(T1);
+
+    /*The right corner, write the year of birth*/
+    const R1 = reduce_year(birthdate.getFullYear());
+    //console.log(R1);
+
+    /*In the bottom corner, write the sum of the previous three Arcana*/
+    const B1 = reduce_number(L1 + T1 + R1);
+    //console.log(B1);
+
+    /*STEP 2 - FIRST LEVEL OF STRATGHT SQUARE*/
+    /*The top-left corner, write the sum of the left and upper corners of the diagonal square*/
+    const LT1 = reduce_number(L1 + T1);
+    //console.log(LT1);
+
+    /*The top-right corner, write the sum of the upper and right corners of the diagonal square*/
+    const TR1 = reduce_number(T1 + R1);
+    //console.log(TR1);
+
+    /*The bottom-right corner, write the sum of the right and lower corners of the diagonal square*/
+    const RB1 = reduce_number(R1 + B1);
+    //console.log(RB1);
+
+    /*The bottom-left corner, write the sum of the lower and left corners of the diagonal square*/
+    const BL1 = reduce_number(B1 + L1);
+    //console.log(BL1);
+
+    /*STEP 3 - CENTER NUMBER*/
+    /*The center number is the core. It's the sum of the for corner from the diagonal square*/
+    const C = reduce_number(L1 + T1 + R1 + B1);
+    //console.log(C);
+
+    /*STEP 4 - THIRD LAYER - NUMBERS BETEWEEN THE CORNERS AND THE CENTER NUMBER*/
+    /*The next step is calculate the numbers between the corners and the center. Each corner is added to center, 
+    resulting in LT3, T3, TR3, R3, RB3, B3, BL3 and L3*/
+
+    const LT3 = reduce_number(LT1 + C);
+    const T3 = reduce_number(T1 + C);
+    const TR3 = reduce_number(TR1 + C);
+    const R3 = reduce_number(R1 + C);
+    const RB3 = reduce_number(RB1 + C);
+    const B3 = reduce_number(B1 + C);
+    const BL3 = reduce_number(BL1 + C);
+    const L3 = reduce_number(L1 + C);
+
+
+    /*STEP 5 - SECOND LAYER - NUMBERS BETEWEEN THE CORNERS AND THIRD LAYER*/
+    /*The next step is calculate the numbers between the corners and the third layer (LT3, T3, TR3, R3, RB3, B3, BL3 and L3). 
+    Each corner corner is added to each third layer, resulting in LT2, T2, TR2, R2, RB2, B2, BL2 and L2*/
+
+    const LT2 = reduce_number(LT1 + LT3);
+    const T2 = reduce_number(T1 + T3);
+    const TR2 = reduce_number(TR1 + TR3);
+    const R2 = reduce_number(R1 + R3);
+    const RB2 = reduce_number(RB1 + RB3);
+    const B2 = reduce_number(B1 + B3);
+    const BL2 = reduce_number(BL1 + BL3);
+    const L2 = reduce_number(L1 + L3);
+
+
+    /*STEP 6 - FOURTH LAYER - L4, T4, RB4, BRB and RRB*/
+    /*Step 6 does the sum of the last four position. The sum is made by the opposite nearest numbers in the same line.*/
+
+    const L4 = reduce_number(L3 + C);
+    const T4 = reduce_number(T3 + C);
+    const RB4 = reduce_number(R3 + B3);
+    const BRB = reduce_number(B3 + RB4);
+    const RRB = reduce_number(R3 + RB4);
+
+    /*ADDING VALUES TO THE MATRIX*/
+    const image = document.getElementById("image");
+
+    //Finding the coordinates to the circles
+    image.addEventListener('click', (event) => {
+        const rect = image.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        console.log(`X: ${x}, Y: ${y}`);
+        alert(`Circle Center: X: ${Math.round(x)}, Y: ${Math.round(y)}`);
+    });
+
+    // Define coordinates of the circles
+    const circles = [
+        L1_coord = { x: 45, y: 325, value: L1},
+        T1_coord = { x: 315, y: 55, value: T1},
+        R1_coord = { x: 590, y: 325, value: R1},
+        B1_coord = { x: 315, y: 595, value: B1},
+        LT1_coord = { x: 120, y: 135, value: LT1},
+        TR1_coord = { x: 500, y: 135, value: TR1},
+        RB1_coord = { x: 500, y: 520, value: RB1},
+        BL1_coord = { x: 120, y: 520, value: BL1},
+        C_coord = { x: 315, y: 325, value: C},
+        LT3_coord = { x: 190, y: 205, value: LT3},
+        TR3_coord = { x: 435, y: 205, value: TR3},
+        RB3_coord = { x: 190, y: 445, value: RB3},
+        BL3_coord = { x: 435, y: 445, value: BL3},
+        L3_coord = { x: 150, y: 325, value: L3},
+        T3_coord = { x: 315, y: 155, value: T3},
+        R3_coord = { x: 485, y: 325, value: R3},
+        B3_coord = { x: 315, y: 495, value: B3},
+        L2_coord = { x: 100, y: 325, value: L2},
+        T2_coord = { x: 315, y: 110, value: T2},
+        R2_coord = { x: 525, y: 325, value: R2},
+        B2_coord = { x: 315, y: 540, value: B2},
+        LT2_coord = { x: 160, y: 175, value: LT2},
+        TR2_coord = { x: 460, y: 175, value: TR2},
+        RB2_coord = { x: 465, y: 475, value: RB2},
+        BL2_coord = { x: 160, y: 475, value: BL2},
+        L4_coord = { x: 215, y: 325, value: L4},
+        T4_coord = { x: 315, y: 235, value: T4},
+        RB4_coord = { x: 400, y: 410, value: RB4},
+        BRB_coord = { x: 355, y: 450, value: BRB},
+        RRB_coord = { x: 440, y: 370, value: RRB}
+    ];
+
+    const container = image.parentElement;
+
+    for (let i = 0; i < circles.length; i++) {
+        let valueDiv = document.createElement('div');
+        valueDiv.className = 'value';
+        valueDiv.textContent = circles[i].value;
+        valueDiv.style.left = `${circles[i].x}px`;
+        valueDiv.style.top = `${circles[i].y}px`;
+        container.appendChild(valueDiv);
+    }
 };
 
-/*STEP 1 - FIRST LEVEL OF DIAGONAL SQUARE
-/*The top corner, write the birth number, which in this case is 5. The Arcana 5 represents personal qualities at birth*/
-const L1 = reduce_number(birthdate.getDate());
-console.log(L1);
-
-/*The upper corner, write the month of birth, which is 10. This represents creativity.*/
-const T1 = reduce_number(birthdate.getMonth()) + 1;
-console.log(T1);
-
-/*The right corner, write the year of birth*/
-const R1 = reduce_year(birthdate.getFullYear());
-console.log(R1);
-
-/*In the bottom corner, write the sum of the previous three Arcana*/
-const B1 = reduce_number(L1 + T1 + R1);
-console.log(B1);
-
-/*STEP 2 - FIRST LEVEL OF STRATGHT SQUARE*/
-/*The top-left corner, write the sum of the left and upper corners of the diagonal square*/
-const LT1 = reduce_number(L1 + T1);
-console.log(LT1);
-
-/*The top-right corner, write the sum of the upper and right corners of the diagonal square*/
-const TR1 = reduce_number(T1 + R1);
-console.log(TR1);
-
-/*The bottom-right corner, write the sum of the right and lower corners of the diagonal square*/
-const RB1 = reduce_number(R1 + B1);
-console.log(RB1);
-
-/*The bottom-left corner, write the sum of the lower and left corners of the diagonal square*/
-const BL1 = reduce_number(B1 + L1);
-console.log(BL1);
-
-/*STEP 3 - CENTER NUMBER*/
-/*The center number is the core. It's the sum of the for corner from the diagonal square*/
-const C = reduce_number(L1 + T1 + R1 + B1);
-console.log(C);
-
-/*STEP 4 - THIRD LAYER - NUMBERS BETEWEEN THE CORNERS AND THE CENTER NUMBER*/
-/*The next step is calculate the numbers between the corners and the center. Each corner corner is added to center, 
-resulting in LT3, T3, TR3, R3, RB3, B3, BL3 and L3*/
-
-const LT3 = reduce_number(LT1 + C);
-const T3 = reduce_number(T1 + C);
-const TR3 = reduce_number(TR1 + C);
-const R3 = reduce_number(R1 + C);
-const RB3 = reduce_number(RB1 + C);
-const B3 = reduce_number(B1 + C);
-const BL3 = reduce_number(BL1 + C);
-const L3 = reduce_number(L1 + C);
 
 
-/*STEP 5 - SECOND LAYER - NUMBERS BETEWEEN THE CORNERS AND THIRD LAYER*/
-/*The next step is calculate the numbers between the corners and the third layer (LT3, T3, TR3, R3, RB3, B3, BL3 and L3). 
-Each corner corner is added to each third layer, resulting in LT2, T2, TR2, R2, RB2, B2, BL2 and L2*/
 
-const LT2 = reduce_number(LT1 + LT3);
-const T2 = reduce_number(T1 + T3);
-const TR2 = reduce_number(TR1 + TR3);
-const R2 = reduce_number(R1 + R3);
-const RB2 = reduce_number(RB1 + RB3);
-const B2 = reduce_number(B1 + B3);
-const BL2 = reduce_number(BL1 + BL3);
-const L2 = reduce_number(L1 + L3);
-
-
-/*STEP 6 - FOURTH LAYER - L4, T4, RB4, BRB and RRB*/
-/*Step 6 does the sum of the last four position. The sum is made by the opposite nearest numbers in the same line.*/
-
-const L4 = reduce_number(L3 + C);
-const T4 = reduce_number(T3 + C);
-const RB4 = reduce_number(R3 + B3);
-const BRB = reduce_number(B3 + RB4);
-const RRB = reduce_number(R3 + RB4);
