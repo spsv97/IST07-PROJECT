@@ -1,32 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matrix of Destiny</title>
-    <style>
-        body {
-            position: relative;
-            font-family: Arial, sans-serif;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Group 3" />
+    <title>Stellar Path</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpeg" />
+    <script src="https://kit.fontawesome.com/yourkitcode.js" crossorigin="anonymous"></script>
 
-        #image {
-            display: block;
-            position: relative;
-            max-width: 100%;
-        }
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Slab:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
 
-        .value {
-            position: absolute;
-            color: black;
-            font-weight: bold;
-            transform: translate(-50%, -100%);
-            font-size: 120%;
+  <body>
+  </head>
+  <body>
+    <header>
+      <h1>Stellar Path</h1>
+      <nav>
+        <button onclick="location.href='astrology_form.html'" class="active">Astrology game</button>
+        <button onclick="location.href='index.html'" class="active">Home page</button>
+      </nav>
+    </header>
+
+    <section class="content">
+      <div class="card">
+        <h2>Numerology</h2>
+        <p>
+          Enter your birth date and a random number to generate your numerology star.
+        </p>
+        <p>
+          This is a real-time star map based on your location. Observe the current celestial positions.
+        </p>
+        <form id="starForm">
+          <label for="birthdate">Birthdate:</label>
+          <input type="date" id="birthdate" />
+          <button id="starButton">Generate Numerology Star</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="icons-section">
+      <h2>You need the Matrix of Destiny if:</h2>
+      <div>
+        <i class="fa-solid fa-heart-crack"></i>
+        <p>You feel emotionally disconnected and seek meaning.</p>
+      </div>
+      <div>
+        <i class="fa-solid fa-cloud-moon-rain"></i>
+        <p>Your life feels like it's stuck in a cycle of uncertainty.</p>
+      </div>
+      <div>
+        <i class="fa-solid fa-hourglass-half"></i>
+        <p>You’re unsure about what path to take in life.</p>
+      </div>
+      <div>
+        <i class="fa-solid fa-lightbulb"></i>
+        <p>You sense hidden potential but don't know how to unlock it.</p>
+      </div>
+      <div>
+        <i class="fa-solid fa-mountain-sun"></i>
+        <p>You crave a fresh start and a clearer life direction.</p>
+      </div>
+      <div>
+        <i class="fa-solid fa-star"></i>
+        <p>You believe the universe has a message for you.</p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <p>For personal consultations and inquiries, contact us:</p>
+      <a href="https://www.instagram.com/nattsll/?hl=es" target="_blank">
+        <img
+          src="https://img.icons8.com/ios-glyphs/40/ffffff/instagram-new.png"
+          alt="Instagram"
+        />
+      </a>
+    </section>
+
+    <footer>
+      <div class="footer-section">
+        <img src="assets/cctb.png" alt="CCTB" id="cctbLogo" />
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("starForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        let birthdate = document.getElementById("birthdate").value;
+        let url = "matrix.html?birthdate=" + birthdate;
+
+        if (birthdate) {
+          window.open(url, '_blank').focus();
         }
-    </style>
-</head>
-<body>
-    <img src="/images/original-matrix.png" id="image" alt="Network of Circles">
-    <script src="/script/matrix.js"></script>
-</body>
+      });
+    </script>
+  </body>
 </html>
