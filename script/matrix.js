@@ -1,6 +1,6 @@
 /*The birthdate will be passed from the form.*/
 const birthdate = new Date(1987,3,15)
-console.log(birthdate)
+//console.log(birthdate)
 
 /*We got the instructions to calculate the destiny matrix from https://www.youtube.com/watch?v=ZpHDV2_7tCs*/
 
@@ -28,41 +28,41 @@ function reduce_year(year) {
 /*STEP 1 - FIRST LEVEL OF DIAGONAL SQUARE*/
 /*The top corner, write the birth number, which in this case is 5. The Arcana 5 represents personal qualities at birth*/
 const L1 = reduce_number(birthdate.getDate());
-console.log(L1);
+//console.log(L1);
 
 /*The upper corner, write the month of birth, which is 10. This represents creativity.*/
 const T1 = reduce_number(birthdate.getMonth()) + 1;
-console.log(T1);
+//console.log(T1);
 
 /*The right corner, write the year of birth*/
 const R1 = reduce_year(birthdate.getFullYear());
-console.log(R1);
+//console.log(R1);
 
 /*In the bottom corner, write the sum of the previous three Arcana*/
 const B1 = reduce_number(L1 + T1 + R1);
-console.log(B1);
+//console.log(B1);
 
 /*STEP 2 - FIRST LEVEL OF STRATGHT SQUARE*/
 /*The top-left corner, write the sum of the left and upper corners of the diagonal square*/
 const LT1 = reduce_number(L1 + T1);
-console.log(LT1);
+//console.log(LT1);
 
 /*The top-right corner, write the sum of the upper and right corners of the diagonal square*/
 const TR1 = reduce_number(T1 + R1);
-console.log(TR1);
+//console.log(TR1);
 
 /*The bottom-right corner, write the sum of the right and lower corners of the diagonal square*/
 const RB1 = reduce_number(R1 + B1);
-console.log(RB1);
+//console.log(RB1);
 
 /*The bottom-left corner, write the sum of the lower and left corners of the diagonal square*/
 const BL1 = reduce_number(B1 + L1);
-console.log(BL1);
+//console.log(BL1);
 
 /*STEP 3 - CENTER NUMBER*/
 /*The center number is the core. It's the sum of the for corner from the diagonal square*/
 const C = reduce_number(L1 + T1 + R1 + B1);
-console.log(C);
+//console.log(C);
 
 /*STEP 4 - THIRD LAYER - NUMBERS BETEWEEN THE CORNERS AND THE CENTER NUMBER*/
 /*The next step is calculate the numbers between the corners and the center. Each corner is added to center, 
@@ -115,19 +115,49 @@ image.addEventListener('click', (event) => {
 });
 
 // Define coordinates of the circles
-const circles = {
-    L1_coord : { x: 41, y: 325 },
-    T1_coord : { x: 300, y: 33 },
-    R1_coord : { x: 572, y: 300 }
-    // Add more coordinates as needed
-};
-
-const valueDiv = document.createElement('div');
-valueDiv.className = 'value';
-valueDiv.textContent = L1;
-// Position the value above the circle
-valueDiv.style.left = `${circles.L1_coord.x}px`;
-valueDiv.style.top = `${circles.L1_coord.y}px`;
+const circles = [
+    L1_coord = { x: 45, y: 325, value: L1},
+    T1_coord = { x: 315, y: 55, value: T1},
+    R1_coord = { x: 590, y: 325, value: R1},
+    B1_coord = { x: 315, y: 595, value: B1},
+    LT1_coord = { x: 120, y: 135, value: LT1},
+    TR1_coord = { x: 500, y: 135, value: TR1},
+    RB1_coord = { x: 500, y: 520, value: RB1},
+    BL1_coord = { x: 120, y: 520, value: BL1},
+    C_coord = { x: 315, y: 325, value: C},
+    LT3_coord = { x: 190, y: 205, value: LT3},
+    TR3_coord = { x: 435, y: 205, value: TR3},
+    RB3_coord = { x: 190, y: 445, value: RB3},
+    BL3_coord = { x: 435, y: 445, value: BL3},
+    L3_coord = { x: 150, y: 325, value: L3},
+    T3_coord = { x: 315, y: 155, value: T3},
+    R3_coord = { x: 485, y: 325, value: R3},
+    B3_coord = { x: 315, y: 495, value: B3},
+    L2_coord = { x: 100, y: 325, value: L2},
+    T2_coord = { x: 315, y: 110, value: T2},
+    R2_coord = { x: 525, y: 325, value: R2},
+    B2_coord = { x: 315, y: 540, value: B2},
+    LT2_coord = { x: 160, y: 175, value: LT2},
+    TR2_coord = { x: 460, y: 175, value: TR2},
+    RB2_coord = { x: 465, y: 475, value: RB2},
+    BL2_coord = { x: 160, y: 475, value: BL2},
+    L4_coord = { x: 215, y: 325, value: L4},
+    T4_coord = { x: 315, y: 235, value: T4},
+    RB4_coord = { x: 400, y: 410, value: RB4},
+    BRB_coord = { x: 355, y: 450, value: BRB},
+    RRB_coord = { x: 440, y: 370, value: RRB}
+];
 
 const container = image.parentElement;
-container.appendChild(valueDiv);
+
+for (let i = 0; i < circles.length; i++) {
+    let valueDiv = document.createElement('div');
+    valueDiv.className = 'value';
+    valueDiv.textContent = circles[i].value;
+    valueDiv.style.left = `${circles[i].x}px`;
+    valueDiv.style.top = `${circles[i].y}px`;
+    container.appendChild(valueDiv);
+}
+
+
+
