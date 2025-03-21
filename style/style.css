@@ -7,14 +7,14 @@
     --mystical-gradient: linear-gradient(135deg, #5e70c3 0%, #8a50c4 100%);
 }
 
-/* Reset default margin, padding, and box-sizing */
+
 * { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
 }
 
-/* General body styles */
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f5e3f7;
@@ -23,21 +23,21 @@ body {
     padding: 0;
 }
 
-/* Header styling */
+
 header {
     text-align: center;
     padding: 3vh;
     background-color: #e8b8f1;
 }
 
-/* Main heading styling */
+
 h1 {
     font-family: 'Roboto Slab', serif;
     font-size: 3rem;
     color: #502d6e;
 }
 
-/* Navigation styling */
+
 nav {
     margin-top: 0.5vh;
 }
@@ -54,7 +54,7 @@ nav button {
     transition: 0.3s;
 }
 
-/* Navigation button hover and active states */
+
 nav button:hover,.active:hover{
     background-color: #9d60b5;
     scale: 1.05;
@@ -62,7 +62,7 @@ nav button:hover,.active:hover{
 }
 
 
-/* Main content layout */
+
 .content {
     display: flex;
     justify-content: center;
@@ -72,7 +72,7 @@ nav button:hover,.active:hover{
    
 }
 
-/* Card component styling */
+
 .card {
     background-color: #fff;
     padding: 2vh;
@@ -85,14 +85,14 @@ nav button:hover,.active:hover{
     margin: 2vh;
 }
 
-/* Card image styling */
+
 .card img {
     width: 80%;
     border-radius: 10px;
     margin: 2vh;
 }
 
-/* Hover effect for cards */
+
 .card:hover {
     transform: scale(1.02);
     box-shadow: 0 5px 10px #7a3f91;
@@ -118,7 +118,7 @@ nav button:hover,.active:hover{
     margin-top: 20px;
 }
 
-/* Icon section styling */
+
 .icons-section h2{
     text-align: center;
     width: 100%;
@@ -141,12 +141,12 @@ nav button:hover,.active:hover{
 
 i {
     font-size: 50px;
-    color: purple; /* Cambia el color */
+    color: purple; 
     margin-right: 1vh;
     margin-bottom: 2vh;
 }
 
-/* Contact section styling */
+
 .contact-section {
     text-align: center;
     padding: 3vh;
@@ -159,7 +159,7 @@ i {
     margin: 10px;
 }
 
-/* Footer styling */
+
 footer {
     background-color: #502d6e;
     color: white;
@@ -171,3 +171,4 @@ footer {
     width: 120px;
     margin-top: 15px;
 }
+
