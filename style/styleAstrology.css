@@ -77,6 +77,10 @@ nav button.active {
     font-size: 1.02rem;
 }
 
+.game-container{
+    margin-bottom: 1.5rem;
+}
+
 /* Form styles */
 form {
     max-width: 500px;
