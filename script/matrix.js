@@ -103,7 +103,7 @@ function calculateMatrix(date) {
     const RRB = reduce_number(R3 + RB4);
 
     /*ADDING VALUES TO THE MATRIX*/
-    const image = document.getElementById("image");
+    const image = document.getElementById("imageMatrix");
     const container = image.parentElement;
 
     //Finding the coordinates to the circles
