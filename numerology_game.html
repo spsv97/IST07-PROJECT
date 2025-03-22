@@ -34,16 +34,20 @@
       <div class="card">
         <h2>Numerology</h2>
         <p>
-          Enter your birth date and a random number to generate your numerology star.
+          Enter your birth date to generate your numerology star.
         </p>
-        <p>
-          This is a real-time star map based on your location. Observe the current celestial positions.
-        </p>
+        <p>Your destiny matrix will be calculated above.</p>
         <form id="starForm">
           <label for="birthdate">Birthdate:</label>
           <input type="date" id="birthdate" />
           <button id="starButton">Generate Numerology Star</button>
         </form>
+      </div>
+    </section>
+
+    <section class="content">
+      <div id="matrixContainer">
+        <img src="/images/original-matrix.png" id="imageMatrix" alt="Destiny Matrix">
       </div>
     </section>
 
@@ -91,17 +95,7 @@
       </div>
     </footer>
 
-    <script>
-      document.getElementById("starForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        let birthdate = document.getElementById("birthdate").value;
-        let url = "matrix.html?birthdate=" + birthdate;
-
-        if (birthdate) {
-          window.open(url, '_blank').focus();
-        }
-      });
-    </script>
+    <script type="module" src="script/matrix.js"></script>
   </body>
 </html>
 
