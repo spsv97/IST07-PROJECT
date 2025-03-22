@@ -1,4 +1,4 @@
-function calculateMatrix(date) {
+function calculateMatrix(date) {    
     /*The birthdate will be passed from the form.*/
     const birthdate = new Date(date)
     console.log(birthdate)
@@ -149,6 +149,10 @@ function calculateMatrix(date) {
         { x: 440, y: 370, value: RRB}
     ];
 
+    /*Remove values if exists before inserting new ones*/
+    document.querySelectorAll('.value').forEach(e => e.remove());
+
+    /*Insert values */
     for (let i = 0; i < circles.length; i++) {
         let valueDiv = document.createElement('div');
         valueDiv.className = 'value';
