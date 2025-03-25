@@ -1,19 +1,4 @@
-/*document.getElementById("starForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevents form refresh
-    let birthdate = document.getElementById("birthdate").value;
-
-    if (birthdate) {
-        calculateMatrix(birthdate);
-    }
-});*/
-
-let params = new URLSearchParams(location.search);
-const birthdate = params.get('birthdate');
-console.log(birthdate);
-
-calculateMatrix(birthdate);
-
-function calculateMatrix(date) {
+function calculateMatrix(date) {    
     /*The birthdate will be passed from the form.*/
     const birthdate = new Date(date)
     console.log(birthdate)
@@ -44,7 +29,7 @@ function calculateMatrix(date) {
     /*STEP 1 - FIRST LEVEL OF DIAGONAL SQUARE*/
     /*The top corner, write the birth number, which in this case is 5. The Arcana 5 represents personal qualities at birth*/
     const L1 = reduce_number(birthdate.getDate()) + 1;
-    //console.log(L1);
+    console.log(L1);
 
     /*The upper corner, write the month of birth, which is 10. This represents creativity.*/
     const T1 = reduce_number(birthdate.getMonth()) + 1;
@@ -118,7 +103,8 @@ function calculateMatrix(date) {
     const RRB = reduce_number(R3 + RB4);
 
     /*ADDING VALUES TO THE MATRIX*/
-    const image = document.getElementById("image");
+    const image = document.getElementById("imageMatrix");
+    const container = image.parentElement;
 
     //Finding the coordinates to the circles
     image.addEventListener('click', (event) => {
@@ -131,40 +117,42 @@ function calculateMatrix(date) {
 
     // Define coordinates of the circles
     const circles = [
-        L1_coord = { x: 45, y: 325, value: L1},
-        T1_coord = { x: 315, y: 55, value: T1},
-        R1_coord = { x: 590, y: 325, value: R1},
-        B1_coord = { x: 315, y: 595, value: B1},
-        LT1_coord = { x: 120, y: 135, value: LT1},
-        TR1_coord = { x: 500, y: 135, value: TR1},
-        RB1_coord = { x: 500, y: 520, value: RB1},
-        BL1_coord = { x: 120, y: 520, value: BL1},
-        C_coord = { x: 315, y: 325, value: C},
-        LT3_coord = { x: 190, y: 205, value: LT3},
-        TR3_coord = { x: 435, y: 205, value: TR3},
-        RB3_coord = { x: 190, y: 445, value: RB3},
-        BL3_coord = { x: 435, y: 445, value: BL3},
-        L3_coord = { x: 150, y: 325, value: L3},
-        T3_coord = { x: 315, y: 155, value: T3},
-        R3_coord = { x: 485, y: 325, value: R3},
-        B3_coord = { x: 315, y: 495, value: B3},
-        L2_coord = { x: 100, y: 325, value: L2},
-        T2_coord = { x: 315, y: 110, value: T2},
-        R2_coord = { x: 525, y: 325, value: R2},
-        B2_coord = { x: 315, y: 540, value: B2},
-        LT2_coord = { x: 160, y: 175, value: LT2},
-        TR2_coord = { x: 460, y: 175, value: TR2},
-        RB2_coord = { x: 465, y: 475, value: RB2},
-        BL2_coord = { x: 160, y: 475, value: BL2},
-        L4_coord = { x: 215, y: 325, value: L4},
-        T4_coord = { x: 315, y: 235, value: T4},
-        RB4_coord = { x: 400, y: 410, value: RB4},
-        BRB_coord = { x: 355, y: 450, value: BRB},
-        RRB_coord = { x: 440, y: 370, value: RRB}
+        { x: 45, y: 325, value: L1},
+        { x: 315, y: 55, value: T1},
+        { x: 590, y: 325, value: R1},
+        { x: 315, y: 595, value: B1},
+        { x: 120, y: 135, value: LT1},
+        { x: 500, y: 135, value: TR1},
+        { x: 500, y: 520, value: RB1},
+        { x: 120, y: 520, value: BL1},
+        { x: 315, y: 325, value: C},
+        { x: 190, y: 205, value: LT3},
+        { x: 435, y: 205, value: TR3},
+        { x: 190, y: 445, value: RB3},
+        { x: 435, y: 445, value: BL3},
+        { x: 150, y: 325, value: L3},
+        { x: 315, y: 155, value: T3},
+        { x: 485, y: 325, value: R3},
+        { x: 315, y: 495, value: B3},
+        { x: 100, y: 325, value: L2},
+        { x: 315, y: 110, value: T2},
+        { x: 525, y: 325, value: R2},
+        { x: 315, y: 540, value: B2},
+        { x: 160, y: 175, value: LT2},
+        { x: 460, y: 175, value: TR2},
+        { x: 465, y: 475, value: RB2},
+        { x: 160, y: 475, value: BL2},
+        { x: 215, y: 325, value: L4},
+        { x: 315, y: 235, value: T4},
+        { x: 400, y: 410, value: RB4},
+        { x: 355, y: 450, value: BRB},
+        { x: 440, y: 370, value: RRB}
     ];
 
-    const container = image.parentElement;
+    /*Remove values if exists before inserting new ones*/
+    document.querySelectorAll('.value').forEach(e => e.remove());
 
+    /*Insert values */
     for (let i = 0; i < circles.length; i++) {
         let valueDiv = document.createElement('div');
         valueDiv.className = 'value';
@@ -175,6 +163,14 @@ function calculateMatrix(date) {
     }
 };
 
+document.getElementById("starForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevents form refresh
+    let birthdate = document.getElementById("birthdate").value;
+    console.log(birthdate);
 
+    if (birthdate) {
+        calculateMatrix(birthdate);
+    }
+});
 
 

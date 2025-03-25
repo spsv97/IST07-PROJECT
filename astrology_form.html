@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,32 +7,19 @@
     <title>Stellar Path</title>
     <link rel="stylesheet" href="style/styleAstrology.css" />
     <link rel="icon" type="image/jpeg" href="assets/favicon.jpeg" />
+    <script src="https://kit.fontawesome.com/yourkitcode.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <header>
       <h1>Stellar Path</h1>
-
       <nav>
-        <button
-          onclick="location.href='index.html'"
-          id="btnHome"
-          class="active"
-        >
-          Home page
-        </button>
-
-        <button
-          onclick="location.href='numerology_game.html'"
-          id="btnNumerology"
-        >
-          Numerology game
-        </button>
+        <button onclick="location.href='index.html'" id="btnHome" class="active">Home page</button>
+        <button onclick="location.href='numerology_game.html'" id="btnNumerology">Numerology game</button>
       </nav>
     </header>
 
     <main>
-      <!-- Astrology Game Section -->
       <section id="astrologySection">
         <div class="content">
           <p>
@@ -48,10 +34,7 @@
               <label for="astro-date">Enter your birthdate:</label>
               <input type="date" id="astro-date" required />
             </div>
-
-            <button type="submit" class="submit-btn">
-              Reveal Your Destiny
-            </button>
+            <button type="submit" class="submit-btn">Reveal Your Destiny</button>
           </form>
 
           <div class="results-container display-none">
@@ -77,18 +60,24 @@
       </section>
     </main>
 
+    <section class="contact-section">
+      <p>For personal consultations and inquiries, contact us:</p>
+      <a href="https://www.instagram.com/nattsll/?hl=es" target="_blank">
+        <img
+          src="https://img.icons8.com/ios-glyphs/40/ffffff/instagram-new.png"
+          alt="Instagram"
+        />
+      </a>
+    </section>
+
     <footer>
-      <div class="footer-section">Natalia</div>
-      <div class="footer-section">Rachata</div>
-      <div class="footer-section">Thiago</div>
-      <div class="footer-section">Steven</div>
       <div class="footer-section">
         <img src="assets/cctb.png" alt="CCTB" id="cctbLogo" />
       </div>
     </footer>
 
-    <!-- Add these script tags before the closing body tag -->
     <script type="module" src="script/astro_explaination.js"></script>
     <script type="module" src="script/astrology.js"></script>
   </body>
 </html>
+
