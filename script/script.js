@@ -6,3 +6,4 @@ document.getElementById("zodiacForm").addEventListener("submit", function(event)
         document.getElementById("resultsContainer").classList.remove("display-none");
     }
 });
+
