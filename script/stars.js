@@ -2,7 +2,7 @@ const API_ID = "7a4932e8-4559-4a46-bc48-082cdc35684a";
 const API_SECRET = "0e9ffca22c362d1f19cccfa2f1c215a95a962d4ffa1e52aa8f705fe5f0e22a33ea8490b0ef2b9f2d294a31664717344c0162a79bb1de6e4b0175f929d88337cd1864d9cebf0cd0c4dc0bf465507e7a4f6487c9a8da7b8b1ce74bb61195d8567592094a58fd9aeeebd07ae9ab0832ae4d";
 const BASE_URL = "https://api.astronomyapi.com/api/v2/studio/star-chart";
 
-async function getStarData() {
+async function getStarData(message) {
     try {
         // Get user's location
         const position = await getUserLocation();
@@ -26,7 +26,7 @@ async function getStarData() {
           "view": {
             "type": "constellation",
             "parameters": {
-              "constellation": "ori" // 3 letter constellation id
+              "constellation": message // 3 letter constellation id
             }
           }
         });
@@ -91,6 +91,35 @@ function displayStarData(data) {
 }
 
 // Run function when page loads
-document.addEventListener("DOMContentLoaded", getStarData());
+// document.addEventListener("DOMContentLoaded", getStarData());
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("btnandromeda").addEventListener("click", function () {
+    getStarData("and");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("btnTucana").addEventListener("click", function () {
+    getStarData("tuc");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("btnOrion").addEventListener("click", function () {
+    getStarData("ori");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("btnAntila").addEventListener("click", function () {
+    getStarData("ant");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("btnTaurus").addEventListener("click", function () {
+    getStarData("tau");
+  });
+});
 
 
