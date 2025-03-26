@@ -172,5 +172,3 @@ document.getElementById("starForm").addEventListener("submit", function(event) {
         calculateMatrix(birthdate);
     }
 });
-
-
