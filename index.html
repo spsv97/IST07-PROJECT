@@ -20,21 +20,6 @@
   <body>
     <header>
       <h1>Stellar Path</h1>
-      <nav>
-        <button
-          onclick="location.href='astrology_form.html'"
-          id="btnAstrology"
-          class="active"
-        >
-          Astrology game
-        </button>
-        <button
-          onclick="location.href='numerology_game.html'"
-          id="btnNumerology"
-        >
-          Numerology game
-        </button>
-      </nav>
     </header>
 
     <section class="content">
@@ -50,6 +35,13 @@
           do the stars affect your life? Uncover the universe’s secrets and
           explore the power of astrology.
         </p>
+        <button
+          onclick="location.href='astrology_form.html'"
+          id="btnAstrology"
+          class="active"
+        >
+          Astrology game
+        </button>
       </div>
 
       <div class="card">
@@ -64,15 +56,27 @@
           of life’s purpose.Dive into the fascinating world of numerology and
           discover the meaning behind each figure.
         </p>
+        <button
+          onclick="location.href='numerology_game.html'"
+          id="btnNumerology"
+        >
+          Numerology game
+        </button>
       </div>
 
-      <div class="card star-map">
+      <div class="card-star-map">
         <h2>Star Map</h2>
-        <img id="star-map-img" src="" alt="Current Star Map" />
+        <img id="star-map-img" src="assets/sky.png" alt="Current Star Map" />
         <p>
           This is a real-time star map based on your location. Observe the
-          current celestial positions.
+          current celestial positions of different constellations as they appear
+          in the night sky.
         </p>
+        <button id="btnandromeda" class="active">Andromeda</button>
+        <button id="btnAntila" class="active">Antila</button>
+        <button id="btnTaurus" class="active">Taurus</button>
+        <button id="btnOrion" class="active">Orion</button>
+        <button id="btnTucana" class="active">Tucana</button>
       </div>
     </section>
 
@@ -101,9 +105,7 @@
       <div>
         <i class="fa-solid fa-briefcase"></i>
         <p>You want to start a new and successful career.</p>
-        <div class="stellar-path">
-    Stellar Path
-</div>
+        <div class="stellar-path">Stellar Path</div>
       </div>
     </section>
 
