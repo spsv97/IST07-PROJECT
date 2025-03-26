@@ -42,7 +42,7 @@ nav {
     margin-top: 0.5vh;
 }
 
-nav button {
+div button {
     background-color: #7a3f91;
     color: #fff;
     border: none;
@@ -55,7 +55,7 @@ nav button {
 }
 
 
-nav button:hover,.active:hover{
+div button:hover,.active:hover{
     background-color: #9d60b5;
     scale: 1.05;
     box-shadow: 0 5px 10px #7a3f91;
@@ -85,6 +85,17 @@ nav button:hover,.active:hover{
     margin: 2vh;
 }
 
+.card-star-map{
+    background-color: #fff;
+    padding: 2vh;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 40%;
+    min-width: 400px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    margin: 2vh;
+}
 
 .card img {
     width: 80%;
@@ -98,11 +109,17 @@ nav button:hover,.active:hover{
     box-shadow: 0 5px 10px #7a3f91;
 }
 
-.card p{
-    text-align: justify;
+.card-star-map:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 10px #7a3f91;
 }
 
-.star-map {
+.card p{
+    text-align: justify;
+    margin: 1rem;
+}
+
+.card-star-map {
     width: 100%;
     max-width: 82%;
     margin: 20px auto;
@@ -111,11 +128,16 @@ nav button:hover,.active:hover{
     text-align: center;
 }
 
-.star-map img {
+.card-star-map img {
     width: 100%;
-    max-width: 600px;
+    max-width: 50%;
     border-radius: 10px;
     margin-top: 20px;
+}
+
+.card-star-map p{
+    text-align: center;
+    margin: 1rem;
 }
 
 
@@ -195,4 +217,26 @@ footer {
     border-radius: 20px;
 }
 
+
+
+
+.card-star-map button {
+    background-color:  #7a3f91;
+    color: #fff;
+    width: 9rem;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+
+.card-star-map button:hover,.active:hover{
+    background-color: #9d60b5;
+    scale: 1.05;
+    box-shadow: 0 5px 10px #7a3f91;
+}
 
