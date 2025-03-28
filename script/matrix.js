@@ -188,7 +188,7 @@ function calculateMatrix(date) {
 
     /*Insert the arcana explanation*/
     const explanation = document.getElementById("cExplanation");
-    explanation.textContent = "Your arcana is " + C + ". It means: " + cExplanation[C-1];
+    explanation.textContent = "Your Core Arcana is " + C + ". It means: " + cExplanation[C-1];
     explanation.classList.add("mystyle");
 };
 
@@ -198,6 +198,6 @@ document.getElementById("starForm").addEventListener("submit", function(event) {
 
     if  (birthDate) {
         calculateMatrix(birthDate);
-        //document.getElementById('matrixContainer').scrollIntoView();
+        document.getElementById('matrixContainer').scrollIntoView({behavior: 'smooth'});
     };
 });
