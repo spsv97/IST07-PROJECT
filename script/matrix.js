@@ -27,15 +27,15 @@ function calculateMatrix(date) {
 
     /*STEP 1 - FIRST LEVEL OF DIAGONAL SQUARE*/
     /*The top corner, write the birth number, which in this case is 5. The Arcana 5 represents personal qualities at birth*/
-    const L1 = reduceNumber birthDate.getDate()) + 1;
+    const L1 = reduceNumber(birthDate.getDate()) + 1;
     console.log(L1);
 
     /*The upper corner, write the month of birth, which is 10. This represents creativity.*/
-    const T1 = reduceNumber birthDate.getMonth()) + 1;
+    const T1 = reduceNumber(birthDate.getMonth()) + 1;
     //console.log(T1);
 
     /*The right corner, write the year of birth*/
-    const R1 = reduceYear birthDate.getFullYear());
+    const R1 = reduceYear(birthDate.getFullYear());
     //console.log(R1);
 
     /*In the bottom corner, write the sum of the previous three Arcana*/
@@ -106,13 +106,13 @@ function calculateMatrix(date) {
     const container = image.parentElement;
 
     //Finding the coordinates to the circles
-    image.addEventListener('click', (event) => {
+    /*image.addEventListener('click', (event) => {
         const rect = image.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
         console.log(`X: ${x}, Y: ${y}`);
         alert(`Circle Center: X: ${Math.round(x)}, Y: ${Math.round(y)}`);
-    });
+    });*/
 
     // Define coordinates of the circles
     const circles = [
@@ -195,9 +195,9 @@ function calculateMatrix(date) {
 document.getElementById("starForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevents form refresh
     let birthDate = document.getElementById("birthdate").value;
-    console.log birthDate);
 
-    if  birthDate) {
-        calculateMatrix birthDate);
-    }
+    if  (birthDate) {
+        calculateMatrix(birthDate);
+        //document.getElementById('matrixContainer').scrollIntoView();
+    };
 });
