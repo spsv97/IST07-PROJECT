@@ -3,6 +3,8 @@ const API_SECRET = "0e9ffca22c362d1f19cccfa2f1c215a95a962d4ffa1e52aa8f705fe5f0e2
 const BASE_URL = "https://api.astronomyapi.com/api/v2/studio/star-chart";
 
 async function getStarData(message) {
+  const starMapImg = document.getElementById("star-map-img");
+  starMapImg.src = "assets/SkyLoading.png";
     try {
         // Get user's location
         const position = await getUserLocation();
