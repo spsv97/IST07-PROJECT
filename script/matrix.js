@@ -161,6 +161,36 @@ function calculateMatrix(date) {
         valueDiv.style.top = `${circles[i].y}px`;
         container.appendChild(valueDiv);
     }
+
+    const cExplanation = [
+        "Represents independence, initiative, and confidently starting new journeys.",
+        "Symbolizes maintaining harmonious and balanced relationships.",
+        "Encourages expressing your creativity and unique talents.",
+        "Emphasizes building strong and stable foundations.",
+        "Urges embracing change and personal evolution.",
+        "Focuses on nurturing interpersonal connections.",
+        "Explores spiritual understanding and deeper metaphysical insights.",
+        "Symbolizes prosperity, success, and achieving goals.",
+        "Encourages introspection and deep self-awareness.",
+        "Represents completion of life cycles and readiness for new phases.",
+        "Symbolizes deep spiritual growth and enlightenment.",
+        "Encourages achieving balance and harmony in life.",
+        "Signifies transformative growth and personal evolution.",
+        "Highlights the importance of adapting smoothly to life's changes.",
+        "Encourages embracing adventure and exploring new possibilities.",
+        "Stresses the importance of self-care and inner tranquility.",
+        "Encourages the continuous pursuit of wisdom and knowledge.",
+        "Highlights building strong community connections and support systems.",
+        "Encourages following your authentic self and unique life path.",
+        "Represents the ongoing attainment of higher knowledge and personal growth.",
+        "Symbolizes achieving ultimate fulfillment and success in life.",
+        "Represents balancing spiritual insight with practical material life."
+    ];
+
+    /*Insert the arcana explanation*/
+    const explanation = document.getElementById("cExplanation");
+    explanation.textContent = "Your arcana is " + C + ". It means: " + cExplanation[C-1];
+    explanation.classList.add("mystyle");
 };
 
 document.getElementById("starForm").addEventListener("submit", function(event) {
