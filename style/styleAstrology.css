@@ -43,6 +43,28 @@ nav {
     margin-top: 0.5vh; 
 }
 
+nav button {
+    background-color: #7a3f91;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #9d60b5;
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px #7a3f91;
+}
+
+nav button.active {
+    background-color: #9d60b5;
+    color: #fff;
+}
 
 .content {
     text-align: center;
@@ -251,7 +273,7 @@ form {
 }
 
 footer {
-    background-color: #502d6e;
+    background-color: #e8b8f1;
     color: white;
     text-align: center;
     padding: 20px;
@@ -273,7 +295,7 @@ footer {
     justify-content: center;
     text-align: center;
     padding: 3vh;
-    background-color: #e8b8f1;
+    background-color: #502d6e;
     color: white;
 }
 
